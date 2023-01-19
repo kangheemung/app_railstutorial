@@ -1,0 +1,21 @@
+<h1>Microposts#index</h1>
+<p>Find me in app/views/microposts/index.html.erb</p>
+<table>
+    <thead>
+        <tr>
+            <th >content</th>
+            <th>user</th>
+        </tr>
+    </thead>
+    <%@microposts.each do |micropost|%>
+      <tr> 
+        <td><%=micropost.content%></td>
+        <td><%=micropost.user_id%></td>
+       
+        <td><%=link_to 'show', microposts_show_path(micropost.id) %></td>
+        <td><%=link_to 'Edit',microposts_edit_path(micropost.id)%></td>
+        <td><%=link_to 'Destroy',microposts_destroy_path(micropost.id), method: :delete, data:{confirm: 'Are you sure?'}%></td>
+      </tr>
+    <%end%>
+</table>
+    <%=link_to "Newmicropost", microposts_new_path %>  

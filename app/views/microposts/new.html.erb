@@ -1,0 +1,9 @@
+<h1>Microposts#new</h1>
+<p>Find me in app/views/microposts/new.html.erb</p>
+<%=form_for @micropost,url:microposts_create_path do|f|%>
+  <p><%=f.label :content %></p>
+  <p><%= f.text_field :content, :placeholder => "content" %></p>
+  <p> <%=f.label :user_id %></p>
+  <p><%= f.text_field :user_id, :placeholder => "User email" %></p>
+  <p><%=f.submit :update %></p>
+<%end%>

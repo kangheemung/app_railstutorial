@@ -10,11 +10,12 @@
     </thead>
     <%@users.each do |user|%>
       <tr> 
-        <td><%user.name%></td>
-        <td><%user.email%></td>
-        <td><%link_to 'show', users_show_path(user.id) %></td>
-        <td><%link_to 'Edit',users_edit_path(user.id)%></td>
-        <td><%link_to 'Destroy',users_destroy_path, method: :delete, data:{confirm: 'Are you sure?'}%></td>
+        <td><%=user.name%></td>
+        <td><%=user.email%></td>
+       
+        <td><%=link_to 'show', users_show_path(user.id) %></td>
+        <td><%=link_to 'Edit',users_edit_path(user.id)%></td>
+        <td><%=link_to 'Destroy',users_destroy_path(user.id), method: :delete, data:{confirm: 'Are you sure?'}%></td>
       </tr>
     <%end%>
 </table>
