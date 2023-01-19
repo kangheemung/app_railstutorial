@@ -1,0 +1,9 @@
+
+<%=form_for @user, url: users_update_path(@user.id) do |f| %>
+  <p><%=f.label :name %></p>
+  <p><%= f.text_field :name, :placeholder => "User name" %></p>
+   <p> <%=f.label :email %></p>
+  <p><%= f.text_field :email, :placeholder => "User email" %></p>
+ <%=f.submit :update %>
+<%end%>
+<%=link_to "Back", users_index_path %>
